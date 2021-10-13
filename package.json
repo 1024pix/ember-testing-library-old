@@ -1,0 +1,29 @@
+{
+  "name": "@pix/ember-testing-library",
+  "version": "0.1.0",
+  "description": "Testing library EmberJS wrapper",
+  "main": "index.js",
+  "keywords": [
+    "emberjs",
+    "testing",
+    "ui",
+    "unit",
+    "integration",
+    "functional",
+    "end-to-end",
+    "e2e"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1024pix/ember-testing-library.git"
+  },
+  "author": "Pix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1024pix/ember-testing-library/issues"
+  },
+  "homepage": "https://github.com/1024pix/ember-testing-library#readme"
+}
