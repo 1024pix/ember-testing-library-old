@@ -25,5 +25,14 @@
   "bugs": {
     "url": "https://github.com/1024pix/ember-testing-library/issues"
   },
-  "homepage": "https://github.com/1024pix/ember-testing-library#readme"
+  "homepage": "https://github.com/1024pix/ember-testing-library#readme",
+  "dependencies": {
+    "@testing-library/dom": "^8.9.0"
+  },
+  "devDependencies": {
+    "@ember/test-helpers": "^2.5.0"
+  },
+  "peerDependencies": {
+    "@ember/test-helpers": "2.x"
+  }
 }
