@@ -1,5 +1,5 @@
-import { getRootElement, click, fillIn, render as renderHbs, visit as visitUrl } from '@ember/test-helpers';
-import { within } from '@testing-library/dom';
+const toto = require('@ember/test-helpers');
+const { within } = require('@testing-library/dom');
 
 /**
  * Wrap the EmberJS container with DOM testing library.
@@ -7,7 +7,7 @@ import { within } from '@testing-library/dom';
  *
  * @returns The EmberJS container wrapped by the DOM testing library.
  */
-export function getScreen() {
+function getScreen() {
   return within(getRootElement());
 }
 
@@ -17,7 +17,7 @@ export function getScreen() {
  * @param {string} url URL of the page to visit.
  * @returns DOM testing library helpers for the given page URL.
  */
-export async function visit(url) {
+async function visit(url) {
   await visitUrl(url);
   return getScreen();
 }
@@ -28,7 +28,7 @@ export async function visit(url) {
  * @param {string} template EmberJS component template.
  * @returns DOM testing library helpers for the given component.
  */
-export async function render(template) {
+async function render(template) {
   await renderHbs(template);
   return getScreen();
 }
@@ -40,7 +40,7 @@ export async function render(template) {
  * @param {*} options Testing library getByRole options.
  * @returns Promise of the click.
  */
-export function clickByName(name, options = {}) {
+function clickByName(name, options = {}) {
   const { getByRole } = getScreen();
   const element = getByRole(/button|link|radio|checkbox/, { ...options, name });
   return click(element);
@@ -53,7 +53,7 @@ export function clickByName(name, options = {}) {
  * @param {*} options Testing library getByText options.
  * @returns Promise of the click.
  */
- export function clickByText(text, options) {
+ function clickByText(text, options) {
   const { getByText } = getScreen();
   const element = getByText(text, options);
   return click(element);
@@ -67,8 +67,17 @@ export function clickByName(name, options = {}) {
  * @param {*} options Testing library getByLabelText options.
  * @returns Promise of the filling.
  */
-export function fillByLabel(label, value, options) {
+function fillByLabel(label, value, options) {
   const { getByLabelText } = getScreen();
   const element = getByLabelText(label, options);
   return fillIn(element, value);
+}
+
+module.exports = {
+  getScreen,
+  visit,
+  render,
+  clickByName,
+  clickByText,
+  fillByLabel,
 }
